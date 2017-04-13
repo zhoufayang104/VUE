@@ -1,0 +1,25 @@
+关于MarkDown
+1. Markdown介绍
+
+Markdown 是一种轻量级标记语言，创始人为约翰·格鲁伯（John Gruber）和亚伦·斯沃茨（Aaron Swartz）。它允许人们“使用易读易写的纯文本格式编写文档，然后转换成有效的XHTML(或者HTML)文档”。
+
+Markdown的语法，对于没有编程经验的人，2-3个小时也可以掌握。各种语言基于的Markdown实现，都已经有了商业应用。
+
+高效，简约的设计，会让Markdown越走越远
+开源，免费的Liences，最后有可能会夺取微软Word软件的市场
+本文不讲Markdown的语法，请大家自行查询。
+
+Markdown的官方网站：http://daringfireball.net/projects/markdown/
+
+2. 在WebStorem中安装Markdown插件
+
+本来在WebStorem中安装Markdown插件很简单的事情，不知道是Idea的版本原因，还是Markdown插件设计者的原因，造成了一些使用问题，需要手动调整一些参数才正确使用。
+
+我在这里也花了一些时间，找到了问题所在，因此写篇文章总结一下。
+
+WebStorm版本：6.0.1
+Makrdown插件版本：0.9.3
+插件安装：
+
+手动安装：需要自己下载markdown插件, 下载地址：http://plugins.jetbrains.com/plugin/5970?pr=phpStorm
+自动安装：在Webstorm中选择: WebStorm –> Preferences –> Plugins –> Browse repositories –> 搜索markdown
