@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TODO</title>
+    <link rel="stylesheet" href="../css/Normalize.css">
+    <link rel="stylesheet" href="./Component.css">
+</head>
+<body>
+    <div id="mycomponent">
+        姓名：<input type="text" v-model="user.name"/><br>
+        年龄：<input type="text" v-model="user.age"/><br>
+        性别：<select v-model="user.sex">
+            <option value="男">男</option>
+            <option value="女">女</option>
+            </select>  <br>
+        <button v-on:click="AddUser">Add</button>
+        <vue-table :users="users" :cellconfig="cellconfig" class-name="t1"></vue-table>
+    </div>
+    
+</body>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="./Component.js"></script>
+</html>

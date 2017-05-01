@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>component</title>
+    <link rel="stylesheet" href="../css/Normalize.css">
+    <link rel="stylesheet" href="./component.css">
+    <style type="text/css">
+        div{
+            border: 1px solid;
+            padding-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="example">
+        <my-component></my-component>
+    </div>
+
+    <div id="example2">
+        <input v-model="parentMsg"/><br>
+        <my-child v-bind:mymessage="parentMsg"></my-child>
+    </div>
+    <div id="counter-event-example">
+        <p>{{total}}</p>
+        <button-counter :my-count="num1" v-on:increment2="incrementTotal"></button-counter>
+        <button-counter :my-count="num2" v-on:increment2="incrementTotal"></button-counter>
+    </div>
+
+    <div id="exampleCurrencyinput">
+        <currency-input label="Price" v-model="price"></currency-input>
+        <currency-input label="Shipping" v-model="shipping"></currency-input>
+        <currency-input label="Handling" v-model="handling"></currency-input>
+        <currency-input label="Discount" v-model="discount"></currency-input>
+        <p>{{ total }}</p>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="../js/vue.js"></script>
+    <script src="./component.js"></script>
+</body>
+
+</html>
