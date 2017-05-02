@@ -1,7 +1,9 @@
 Vue.component('vue-table',{
     template:"<table :class='className'><thead><tr>\
+        <th style='width:20px'></th>\
         <th v-for='cell in cellconfig'>{{ cell.title}}</th>\
         </tr></thead><tbody><tr v-for='user in users'>\
+        <td style='text-align:center;width=20px'><input type='checkbox'/></td>\
         <td v-for='cell in cellconfig'>{{user[cell.cellName]}}</td>\
     </tr></tbody></table>",
     props: {

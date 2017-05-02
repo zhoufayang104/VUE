@@ -2,6 +2,7 @@
 {
     clear: both;
     border: 1px solid #c9dae4;
+    width: 100%;
 }
 .t1 tr th
 {
@@ -34,4 +35,12 @@ tr.alt td
 tr.over td
 {
     background: #bcd4ec; /*这个将是鼠标高亮行的背景色*/
+}
+
+#mycomponent{
+    width: 50%;
+    margin: 10px auto;
+}
+.mycomponent-input{
+    /*text-align: center;*/
 }

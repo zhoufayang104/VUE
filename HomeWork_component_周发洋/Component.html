@@ -10,6 +10,7 @@
 </head>
 <body>
     <div id="mycomponent">
+        <div class="mycomponent-input">
         姓名：<input type="text" v-model="user.name"/><br>
         年龄：<input type="text" v-model="user.age"/><br>
         性别：<select v-model="user.sex">
@@ -17,6 +18,7 @@
             <option value="女">女</option>
             </select>  <br>
         <button v-on:click="AddUser">Add</button>
+        </div>
         <vue-table :users="users" :cellconfig="cellconfig" class-name="t1"></vue-table>
     </div>
     
