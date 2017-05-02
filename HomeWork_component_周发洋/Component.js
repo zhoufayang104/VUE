@@ -1,7 +1,7 @@
 Vue.component('vue-table',{
     template:"<table :class='className'><thead><tr>\
         <th v-for='cell in cellconfig'>{{ cell.title}}</th>\
-        </tr></thead><tbody><tr v-for='user in myusers'>\
+        </tr></thead><tbody><tr v-for='user in users'>\
         <td v-for='cell in cellconfig'>{{user[cell.cellName]}}</td>\
     </tr></tbody></table>",
     props: {
@@ -49,10 +49,28 @@ new Vue({
     },
     methods: {
         AddUser:function(){
-            this.users.push(this.user);
-            // this.user.name="";
+            this.users.push(this.deepCopy(this.user));
+            this.user.name="";
             this.age=18;
             this.sex='男'
+        },
+        deepCopy:function(o){
+            if (o instanceof Array) {
+                var n = [];
+                for (var i = 0; i < o.length; ++i) {
+                    n[i] = this.deepCopy(o[i]);
+                }
+                return n;
+
+            } else if (o instanceof Object) {
+                var n = {}
+                for (var i in o) {
+                    n[i] = this.deepCopy(o[i]);
+                }
+                return n;
+            } else {
+                return o;
+            }
         }
     }
 })
