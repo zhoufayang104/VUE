@@ -10,7 +10,7 @@ Vue.component('vue-table',{
         <td v-for='cell in cellconfig'>\
             <input v-if='user.editable && cell.type==text ' type='text' v-model='user[cell.cellName]'/>\
             <select v-else-if='user.editable && cell.type==select ' v-model='user[cell.cellName]'>\
-                <option value='男'>男</option><option value='女'>女</option>\
+                <option v-for='option in cell.options' :value='option'>{{option}}</option>\
             </select>\
             <label v-else>{{user[cell.cellName]}}</label>\
         </td>\
@@ -29,6 +29,7 @@ Vue.component('vue-table',{
         doEdit:function(index){
             this.users[index].editable=!this.users[index].editable;
             this.users[index].completed=false;
+            this.$emit('do-edit');
         }
     },
     filters:{
@@ -46,8 +47,9 @@ new Vue({
         cellconfig:[
             {cellName:"name",title:"姓名",type:"text"},
             {cellName:"age",title:"年龄",type:"text"},
-            {cellName:"sex",title:"性别",type:"select"}
-        ]
+            {cellName:"sex",title:"性别",type:"select",options:['男','女']}
+        ],
+        total:0
     },
     methods: {
         AddUser:function(){
@@ -55,6 +57,9 @@ new Vue({
             this.user.name="";
             this.age=18;
             this.sex='男'
+        },
+        refresh:function(){
+            this.total+=1;
         },
         DelUser:function(){
             

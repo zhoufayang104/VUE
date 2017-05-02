@@ -20,7 +20,10 @@
         <button v-on:click="AddUser">Add</button>&nbsp;&nbsp;&nbsp;
         <button v-on:click="DelUser">Del</button>
         </div>
-        <vue-table :users="users" :cellconfig="cellconfig" class-name="t1"></vue-table>
+        <vue-table :users="users" :cellconfig="cellconfig" class-name="t1" v-on:do-edit="refresh()">
+        </vue-table>
+
+        <h3>合计：{{total}}</h3>
     </div>
     
 </body>
