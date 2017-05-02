@@ -38,9 +38,10 @@ tr.over td
 }
 
 #mycomponent{
-    width: 50%;
+    width: 80%;
     margin: 10px auto;
 }
-.mycomponent-input{
-    /*text-align: center;*/
+
+.trSelected{
+    background-color:lightgray;
 }
