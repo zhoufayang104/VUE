@@ -12,23 +12,27 @@
     <div id="mycomponent">
         <div class="mycomponent-input">
         姓名：<input type="text" v-model="user.name"/><br>
-        年龄：<input type="text" v-model="user.age"/><br>
+        年龄：<input type="text" v-model="user.age" /><br>
         性别：<select v-model="user.sex">
             <option value="男">男</option>
             <option value="女">女</option>
             </select>  <br>
-        <button v-on:click="AddUser">Add</button>&nbsp;&nbsp;&nbsp;
+        <button v-on:click="AddUser">Add</button>&nbsp;
         <button v-on:click="DelUser">Del</button>
         </div>
-        <vue-table :users="users" :cellconfig="cellconfig" class-name="t1" v-on:do-edit="refresh()">
+        <vue-table :users="users" :cellconfig="cellconfig" class-name="t1" v-on:get-selectedcount="getSelectedCount">
         </vue-table>
 
         <h3>合计：{{total}}</h3>
+        <h3>男生：{{ maleTotal }}</h3>
+        <h3>女生：{{ femaleTotal }}</h3>
+        <h3>选中：{{ selectedTotal }}</h3>
     </div>
     
 </body>
+<script src="./Underscore1.8.3.js"></script>
 <script src="https://unpkg.com/vue/dist/vue.js"></script>
 <script src="./Component.js"></script>
-<script src="./Underscore1.8.3.js"></script>
+
 
 </html>
